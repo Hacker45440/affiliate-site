@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Best Deals - Price Comparison</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 20px auto; padding: 0 15px; }
+        h1 { text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .card { border: 1px solid #ddd; border-radius: 8px; padding: 12px; text-align: center; }
+        .card img { max-width: 100%; border-radius: 6px; }
+        .price { color: #2b6cb0; font-weight: bold; font-size: 18px; }
+        .platform { color: #666; font-size: 13px; }
+        .buy-btn { display: inline-block; margin-top: 8px; background: #ff9900; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>🛍️ Best Deals - Price Comparison</h1>
+    <p style="text-align:center;">Amazon, Flipkart, Meesho, Shopsy — best price ekhane khuje pan!</p>
+    <div class="grid">
+        {% for p in products %}
+        <div class="card">
+            <img src="{{ p.image }}" alt="{{ p.name }}">
+            <h3>{{ p.name }}</h3>
+            <p class="price">{{ p.price }}</p>
+            <p class="platform">{{ p.platform }}</p>
+            <a href="{{ p.link }}" class="buy-btn">Buy Now</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
