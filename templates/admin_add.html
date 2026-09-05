@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Product</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 40px auto; padding: 0 20px; }
+        input, button { width: 100%; padding: 10px; margin: 6px 0; box-sizing: border-box; }
+        button { background: #28a745; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Add New Product</h2>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Product Name" required>
+        <input type="text" name="price" placeholder="Price (e.g. ₹999)" required>
+        <input type="text" name="image_url" placeholder="Image URL" required>
+        <input type="text" name="platform" placeholder="Platform (Amazon/Flipkart)" required>
+        <input type="text" name="affiliate_link" placeholder="Affiliate Link" required>
+        <input type="text" name="category" placeholder="Category (e.g. Electronics)">
+        <button type="submit">Add Product</button>
+    </form>
+    <p><a href="{{ url_for('admin_dashboard') }}">← Back to Dashboard</a></p>
+</body>
+</html>

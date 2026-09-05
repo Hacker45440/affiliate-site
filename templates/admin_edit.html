@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Product</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 40px auto; padding: 0 20px; }
+        input, button { width: 100%; padding: 10px; margin: 6px 0; box-sizing: border-box; }
+        button { background: #2b6cb0; color: white; border: none; cursor: pointer; }
+        label { display: flex; align-items: center; gap: 8px; }
+        label input { width: auto; }
+    </style>
+</head>
+<body>
+    <h2>Edit Product</h2>
+    <form method="POST">
+        <input type="text" name="name" value="{{ product.name }}" required>
+        <input type="text" name="price" value="{{ product.price }}" required>
+        <input type="text" name="image_url" value="{{ product.image_url }}" required>
+        <input type="text" name="platform" value="{{ product.platform }}" required>
+        <input type="text" name="affiliate_link" value="{{ product.affiliate_link }}" required>
+        <input type="text" name="category" value="{{ product.category }}">
+        <label>
+            <input type="checkbox" name="is_active" {% if product.is_active %}checked{% endif %}>
+            Active (site-e dekhabe)
+        </label>
+        <button type="submit">Update Product</button>
+    </form>
+    <p><a href="{{ url_for('admin_dashboard') }}">← Back to Dashboard</a></p>
+</body>
+</html>
